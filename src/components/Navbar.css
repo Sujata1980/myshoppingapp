@@ -1,0 +1,41 @@
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    height:60px;
+    color:#111;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding:10px 20px;
+
+      /* ✨ Add this for shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    }
+
+.navbar-logo{
+    display:flex;
+    align-items: center;
+    margin-left: 4em;
+}
+
+
+
+
+.navbar-menu{
+   display:flex;
+   list-style: none;
+   gap:5em; 
+}
+
+.navbar-item{
+    cursor:pointer;
+    transition:color 0.3s;
+    font-weight: 900;
+}
+
+.navbar-item:hover{
+    color:#e45a03;
+}

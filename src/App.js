@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import Ourproduct from './components/Ourproduct';
 
 function App() {
+  const[selectedCategories,setSelectedCategories] = useState([])
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const[selectedPrice,setSelectedPrice] = useState([]);
+  const[selectedRam,setSelectedRam] = useState([]);
+
+  
+
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategories([category]); // Only one category selected at a time
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar onCategoryClick={handleCategoryClick}/>
+      <div className="main-content">
+        <Sidebar 
+        selectedCategories={selectedCategories}
+        setSelectedCategories={setSelectedCategories}
+        selectedBrands={selectedBrands}
+        setSelectedBrands={setSelectedBrands}
+        selectedPrice={selectedPrice}
+        setSelectedPrice={setSelectedPrice}
+        selectedRam={selectedRam}
+        setSelectedRam={setSelectedRam}
+
+        />      
+        <Ourproduct 
+        selectedCategories={selectedCategories}
+        selectedBrands={selectedBrands}
+        selectedPrice={selectedPrice}
+        selectedRam={selectedRam}
+        />
+      </div>  
     </div>
   );
 }

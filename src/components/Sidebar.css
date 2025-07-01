@@ -1,0 +1,81 @@
+.sidebar {
+  width: 250px;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  min-height: 100vh;
+  box-sizing: border-box;
+  flex-shrink: 0; /*dont allow shrinking and Now, the sidebar will always stay 250px wide,
+                   and the .product-container in Ourproduct will shrink instead.By default
+                   flex-shrink value is 1 and container will shrink.If we will not write 
+                   flex-shrink-0 then we will not be able to increase the width of sidebar.*/
+
+}
+
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+
+
+
+/* Responsive: Collapse or reposition on smaller screens */
+/* ✅ Mobile view: full width */
+/* This means: if screen width is 768px or less, the Sidebar will take up the full width (100%) 
+— this is ideal for mobile devices where vertical stacking is preferred. */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.sidebar h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.label{
+  display:flex;
+}
+
+.sidebar-list,
+.brand-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.sidebar-list li,
+.brand-list li {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sidebar-list li:hover,
+.brand-list li:hover {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+
+
+  .sidebar h2 {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* .sidebar-list li,
+  .brand-list li {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+  } */
+
